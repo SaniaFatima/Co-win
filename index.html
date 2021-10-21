@@ -12,7 +12,6 @@
  
 <body>
 
-
  <nav class="navigation max-width-1 m-auto">
              <div class="nav-left">
              
@@ -84,6 +83,7 @@
     </select>
   </div>
    <button type="button" id="srchbutton" class="btn btn-default">Search</button> 
+   <button type="reset" value="Reset" id="resetbutton" class="btn btn-default">Reset</button>
   </form>
  
 
@@ -105,9 +105,7 @@
 
 <script>
 
-/*function getKeyByValue(object, value) {
-  return Object.keys(object).find(key => object[key] === value);
-}*/
+
     var AndhraPradesh = new Map([[9,"Anantapur"],[10,"Chittoor"],[11,"East Godavari"],[5,"Guntur"],[4,"Krishna"],[7,"Kunool"],[12,"Prakasam"],[13,"Nellore"],[14,"Srikakulam"],[8,"Visakhapatnam"],[15,"Vizianagaram"],[16,"West Godavari"]]);
     var ArunachalPradesh = new Map([[22,"Anjaw"],[20,"Changlang"],[25,"Dibang Valley"],[23,"East Kameng"],[27,"Kra Daadi"],[21,"Kurung Kumey"],[29,"Lohit"],[40,"Longding"],[31,"Lower Dibang Valley"],[32,"Lower Subansiri"],[36,"Namsai"],[39,"Papum Pare"],[37,"Siang"],[30,"Tawang"],[26,"Tirap"],[34,"Upper Siang"],[41,"Upper Subansiri"],[28,"West Kameng"],[38,"West Siang"],[17,"Itanagar"]]);
     var Assam = new Map([[46,"Baksa"],[47,"Barpeta"],[765,"Biswanath"],[57,"Bongaigaon"],[66,"Cachar"],[766,"Charaideo"],[58,"Chirang"],[48,"Darrang"],[62,"Dhemaji"],[59,"Dhubri"],[43,"Dibrugarh"],[60,"Goalpara"],[53,"Golaghat"],[68,"Hailakandi"],[764,"Hojai"],[54,"Jorhat"],[49,"Kamrup Metropolitan"],[50,"Kamrup (Rural)"],[51,"Karbi Anglong"],[69,"Karimganj"],[61,"Kokrajhar"],[63,"Lakhimpur"],[767,"Majuli"],[55,"Morigaon"],[56,"Nagaon"],[52,"Nalbari"],[67,"Dima Hasao"],[44,"Sivasagar"],[64,"Sonitpur"],[768,"South Salmara Mankachar"],[45,"Tinsukia"],[65,"Udalguri"],[769,"West Karbi Anglong"]]);
@@ -266,9 +264,7 @@
   }
 
   
-  /*for(var i = 0; i < optionsList.length; i++){
-    htmlString = htmlString+"<option value='"+ optionsList[i] +"'>"+ optionsList[i] +"</option>";
-  }*/
+  
 
   optionsList.forEach((values,keys)=>{
   
@@ -278,24 +274,14 @@
 
   $("#inputDistrict").html(htmlString);
 
-  //var dc=$("#inputDistrict").val();
-  //var dcode=0;
-  /*function getKeyByValue(object, value) {
-  return Object.keys(object).find(key => object[key] === value);
-  }*/
   
-
- /* optionsList.forEach((values,keys)=>{
-    if(values==dc)
-    {
-    dcode=keys;
-    }
-  })
-*/
 });
 
-//var dcode=document.getElementById("inputDistrict").value;
 
+
+$("#resetbutton").click(function(){
+  document.location.reload(true);
+});
 
 var date = new Date();
         var today = date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear();
